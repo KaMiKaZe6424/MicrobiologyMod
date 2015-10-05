@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "microbiologymod",
+  "name": "Microbiology Mod",
+  "description": "Explore the world of microorganisms in minecraft!",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["KaMiKaZe6424", "Helibum1"],
+  "credits": "The authors for creating all code and textures used in the mod, and the forge dev team for making this mod possible at all.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
