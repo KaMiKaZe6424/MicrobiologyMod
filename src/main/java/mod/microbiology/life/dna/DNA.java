@@ -2,6 +2,11 @@ package mod.microbiology.life.dna;
 
 import java.util.Random;
 
+/**
+ * This class defines the DNA string each organism has, it will be read by a DNAReader and then be deserialized into a lifeform.
+ * @author KaMiKaZe6424
+ *
+ */
 public class DNA {
 	
 	private char[] code = new char[8192];
