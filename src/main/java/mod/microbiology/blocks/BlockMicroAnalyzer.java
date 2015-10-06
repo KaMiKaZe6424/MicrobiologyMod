@@ -9,7 +9,7 @@ public class BlockMicroAnalyzer extends Block {
 	public BlockMicroAnalyzer() {
 		super(Material.iron);
 		setCreativeTab(new MicrobiologyTab());
-		this.setBlockName("Test");
+		this.setBlockName("microanalyzer");
 	}
 	
 	

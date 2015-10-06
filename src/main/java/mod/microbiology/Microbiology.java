@@ -8,9 +8,7 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.FMLControlledNamespacedRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
-
 
 @Mod(modid="microbiologymod", name="Microbiology Mod", version="0.0")
 public class Microbiology {
@@ -39,6 +37,9 @@ public class Microbiology {
 		
 		//Registering Blocks
 		GameRegistry.registerBlock(microanalyzer, "Microanalyzer");
+		
+		//Doing some localization
+		
 	}
 	
 }
