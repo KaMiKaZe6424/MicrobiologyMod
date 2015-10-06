@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 
 public class BlockMicroAnalyzer extends Block {
 
-	protected BlockMicroAnalyzer() {
+	public BlockMicroAnalyzer() {
 		super(Material.iron);
 		setCreativeTab(new MicrobiologyTab());
 		this.setBlockName("Test");

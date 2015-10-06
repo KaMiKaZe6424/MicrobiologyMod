@@ -13,7 +13,6 @@ public class DNA {
 	
 	/**
 	 * The constructor without any arguments will create a new DNA object with randomly generated code inside.
-	 * @author KaMiKaZe6424
 	 */
 	public DNA() {
 		for (char c : code) {
@@ -25,6 +24,22 @@ public class DNA {
 			case 3: c = 'D'; break;
 			}
 		}
+	}
+	
+	/**
+	 * This constructor creates a new DNA object with a dna code which is given to it as an argument. It is only visible frmo inside the dna package.
+	 * @param code
+	 */
+	DNA(char[] code) {
+		this.code = code;
+	}
+	
+	/**
+	 * This is the character-array full of the caracters A,B,C and D, ready to be interpreted.
+	 * @return The dna code of this DNA object.
+	 */
+	public char[] getCode() {
+		return code;
 	}
 	
 }
