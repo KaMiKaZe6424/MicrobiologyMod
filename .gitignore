@@ -2,6 +2,7 @@
 /bin/
 =======
 /eclipse/
+/.classpath
 >>>>>>> origin/master
 /gradle/
 /build.gradle
