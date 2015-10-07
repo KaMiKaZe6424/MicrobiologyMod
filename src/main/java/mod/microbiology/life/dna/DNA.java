@@ -7,7 +7,7 @@ import java.util.Random;
  * @author KaMiKaZe6424
  *
  */
-public class DNA {
+public class DNA implements IDNA {
 	
 	private char[] code = new char[8192];
 	
