@@ -7,4 +7,9 @@ public class Bacteria implements ILifeForm {
 		return "bacteria";
 	}
 
+	@Override
+	public void interpretDNA(char[] c) {
+		
+	}
+
 }

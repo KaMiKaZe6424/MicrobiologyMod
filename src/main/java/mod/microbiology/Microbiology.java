@@ -45,7 +45,7 @@ public class Microbiology {
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		// Registering Blocks
-		GameRegistry.registerBlock(microanalyzer, "Microanalyzer");
+		GameRegistry.registerBlock(microanalyzer, "microanalyzer");
 		
 		// Registering Items
 		GameRegistry.registerItem(sample, "sample");

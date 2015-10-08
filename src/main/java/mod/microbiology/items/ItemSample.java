@@ -10,13 +10,22 @@ public class ItemSample extends Item {
 
 	public ItemSample() {
 		super();
-		setMaxStackSize(1);
+		setMaxStackSize(16);
 		setCreativeTab(Microbiology.tabCore());
 		setUnlocalizedName("itemSample");
 	}
 	
 	@Override
 	public ItemStack onItemRightClick(ItemStack s, World w, EntityPlayer p) {
-		return new ItemStack(new ItemSampleApplied());
+		if (p.inventory.getFirstEmptyStack() > 0) {
+		p.inventory.addItemStackToInventory(new ItemStack(new ItemSampleApplied(), 1));
+		} else {
+			if (s.stackSize == 1) {
+				return new ItemStack(new ItemSampleApplied(), 1);
+			} else {
+				return new ItemStack(s.getItem(), s.stackSize);
+			}
+		}
+		return new ItemStack(s.getItem(), s.stackSize-1);
 	}
 }
