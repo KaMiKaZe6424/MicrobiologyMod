@@ -10,12 +10,25 @@ import java.util.TreeSet;
 
 import com.google.common.base.Joiner;
 
+/**
+ * This is some sort of search engine for searching patterns in a char[]. The point is, that this state machine
+ * only needs to read the char[] once and can find any number of patterns whilst doing so. the only drawback is,
+ * that it needs to setup two tables before searching. That takes some time with many patterns, but it only needs to do
+ * that once for every set of patterns it gets, and then it can search any char[] for these patterns.
+ * @author KaMiKaZe6424
+ *
+ */
 public class DeterministicStateMachine {
 	
 	private HashMap<String, DeterministicState> map;
 	private TransitionTable tt;
 	private HashMap<DeterministicState, DeterministicState[]> finalMap;
 	
+	/**
+	 * For creating a new state machine, you need to have a table of possible transitions between states and the states themselves.
+	 * For more information about these TransitionTables, lookup their javadoc.
+	 * @param tt The transition table with all possible transitions between states inside.
+	 */
 	public DeterministicStateMachine(TransitionTable tt) {
 		this.tt = tt;
 		map = new HashMap<String, DeterministicState>();
@@ -74,6 +87,11 @@ public class DeterministicStateMachine {
 		}
 	}
 	
+	/**
+	 * This method searches a given char[] for all specified patterns.
+	 * @param dna The char[] to be search for the patterns
+	 * @return
+	 */
 	public String[] match(char[] dna) {
 		DeterministicState cur = map.get("0");
 		Set<String> found = new HashSet<String>();

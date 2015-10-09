@@ -9,21 +9,24 @@ import java.util.Random;
  */
 public class DNA implements IDNA {
 	
-	private char[] code = new char[8192];
+	private char[] code;
 	
 	/**
 	 * The constructor without any arguments will create a new DNA object with randomly generated code inside.
 	 */
 	public DNA() {
+		code = new char[8192];
+		String s = "";
 		for (char c : code) {
 			int i = new Random().nextInt(4);
 			switch (i) {
-			case 0: c = 'A'; break;
-			case 1: c = 'B'; break;
-			case 2: c = 'C'; break;
-			case 3: c = 'D'; break;
+			case 0: s += "A"; break;
+			case 1: s += "B"; break;
+			case 2: s += "C"; break;
+			case 3: s += "D"; break;
 			}
 		}
+		code = s.toCharArray();
 	}
 	
 	/**
