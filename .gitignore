@@ -13,3 +13,9 @@
 /LICENSE-fml.txt
 /MinecraftForge-Credits.txt
 /MinecraftForge-License.txt
+/logs/
+/crash-reports/
+/saves/
+/config/
+/options.txt
+/usernamecache.json

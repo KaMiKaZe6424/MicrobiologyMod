@@ -1,12 +1,12 @@
 package mod.microbiology.automata;
 
-public class State {
+public class NondeterministicState {
 	
 	private String label;
 	
 	private String m = null;
 
-	public State(String label) {
+	public NondeterministicState(String label) {
 		this.label = label;
 	}
 	
@@ -16,6 +16,10 @@ public class State {
 	
 	public boolean isMatchState() {
 		return m != null;
+	}
+	
+	public String getMatch() {
+		return m;
 	}
 	
 	public void setMatch(String s) {

@@ -15,7 +15,11 @@ public class TableTester {
 	
 	public TableTester() {
 		NondeterministicTable t = new NondeterministicTable(s, tt);
-		tt.printTable();
+		DeterministicStateMachine dsm = new DeterministicStateMachine(tt);
+		String[] m = dsm.match("ABCDCDCABCDBABCDCADBCADACBDCBCBCBCCBCB".toCharArray());
+		for (String s : m) {
+			System.out.println("Found " + s + "!");
+		}
 	}
 	
 }

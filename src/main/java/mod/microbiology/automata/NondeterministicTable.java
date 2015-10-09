@@ -6,22 +6,24 @@ import java.util.List;
 
 public class NondeterministicTable {
 	
-	HashMap<State, State[]> map;
+	HashMap<NondeterministicState, NondeterministicState[]> map;
+	List<NondeterministicState> l;
 	
 	public NondeterministicTable(String[] arr, TransitionTable t) {
-		HashMap<State, State[]> m = new HashMap<State, State[]>();
-		List<State> l = new ArrayList<State>();
-		l.add(new State("0"));
+		HashMap<NondeterministicState, NondeterministicState[]> m = new HashMap<NondeterministicState, NondeterministicState[]>();
+		l = new ArrayList<NondeterministicState>();
+		l.add(new NondeterministicState("0"));
 		for (String s : arr) {
-			State from = l.get(0);
+			NondeterministicState from = l.get(0);
 			for (char c : s.toCharArray()) {
-				State to = new State(String.valueOf(l.size()));
+				NondeterministicState to = new NondeterministicState(String.valueOf(l.size()));
 				l.add(to);
 				t.put(from, c, to);
 				from = to;
 			}
 			from.setMatch(s);
 		}
+		t.setStates(l);
 	}
 	
 }
