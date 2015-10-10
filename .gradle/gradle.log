@@ -14,140 +14,19 @@
 
 :processResources
 :classes
-:jar
-:getVersionJson
-:extractUserDev UP-TO-DATE
-:extractNatives UP-TO-DATE
-:getAssetsIndex
-:getAssets
-:makeStart
-[ant:javac] warning: [options] bootstrap class path not set in conjunction with -source 1.6
-[ant:javac] 1 warning
-:runClient
-[09:34:39] [main/INFO] [GradleStart]: Extra: []
-[09:34:39] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --accessToken, {REDACTED}, --assetIndex, 1.7.10, --assetsDir, C:/Users/Linus/.gradle/caches/minecraft/assets, --version, 1.7.10, --tweakClass, cpw.mods.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[09:34:40] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Using primary tweak class name cpw.mods.fml.common.launcher.FMLTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLTweaker
-[09:34:40] [main/INFO] [FML]: Forge Mod Loader version 7.99.16.1448 for Minecraft 1.7.10 loading
-[09:34:40] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.7.0_79, running on Windows 7:amd64:6.1, installed at C:\Program Files\Java\jdk1.7.0_79\jre
-[09:34:40] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[09:34:40] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[09:34:40] [main/INFO] [GradleStart]: Injecting location in coremod cpw.mods.fml.relauncher.FMLCorePlugin
-[09:34:40] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[09:34:40] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.FMLDeobfTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLInjectionAndSortingTweaker
-[09:34:40] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
-[09:34:40] [main/ERROR] [FML]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
-[09:34:41] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
-[09:34:41] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.relauncher.CoreModManager$FMLPluginWrapper
-[09:34:41] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.FMLDeobfTweaker
-[09:34:42] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[09:34:42] [main/INFO] [LaunchWrapper]: Loading tweak class name cpw.mods.fml.common.launcher.TerminalTweaker
-[09:34:42] [main/INFO] [LaunchWrapper]: Calling tweak class cpw.mods.fml.common.launcher.TerminalTweaker
-[09:34:42] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[09:34:44] [main/INFO]: Setting user: Player441
-[09:34:46] [Client thread/INFO]: LWJGL Version: 2.9.1
-[09:34:47] [Client thread/INFO] [FML]: Could not load splash.properties, will create a default one
-[09:34:47] [Client thread/ERROR] [FML]: Could not save the splash.properties file
-java.io.FileNotFoundException: .\config\splash.properties (Das System kann den angegebenen Pfad nicht finden)
-	at java.io.FileOutputStream.open(Native Method) ~[?:1.7.0_79]
-	at java.io.FileOutputStream.<init>(FileOutputStream.java:221) ~[?:1.7.0_79]
-	at java.io.FileOutputStream.<init>(FileOutputStream.java:171) ~[?:1.7.0_79]
-	at java.io.FileWriter.<init>(FileWriter.java:90) ~[?:1.7.0_79]
-	at cpw.mods.fml.client.SplashProgress.start(SplashProgress.java:151) [SplashProgress.class:?]
-	at cpw.mods.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:193) [FMLClientHandler.class:?]
-	at net.minecraft.client.Minecraft.startGame(Minecraft.java:522) [Minecraft.class:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:942) [Minecraft.class:?]
-	at net.minecraft.client.main.Main.main(Main.java:164) [Main.class:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.7.0_79]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[?:1.7.0_79]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.7.0_79]
-	at java.lang.reflect.Method.invoke(Method.java:606) ~[?:1.7.0_79]
-	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.11.jar:?]
-	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.11.jar:?]
-	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source) [start/:?]
-	at GradleStart.main(Unknown Source) [start/:?]
-[09:34:47] [Client thread/INFO] [STDOUT]: [cpw.mods.fml.client.SplashProgress:start:188]: ---- Minecraft Crash Report ----
-// Oh - I know what I did wrong!
+:javadocC:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\DeterministicState.java:38: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\DeterministicState.java:46: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\DeterministicState.java:54: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\DeterministicStateMachine.java:95: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\NondeterministicState.java:26: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\NondeterministicState.java:34: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\NondeterministicState.java:42: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\TransitionTable.java:72: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\TransitionTable.java:88: warning - @return tag has no arguments.
+C:\Users\Linus\git\MicrobiologyMod\src\main\java\mod\microbiology\automata\TransitionTable.java:98: warning - @return tag has no arguments.
 
-Time: 06.10.15 09:34
-Description: Loading screen debug info
-
-This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
-
-
-A detailed walkthrough of the error, its code path and all known details is as follows:
----------------------------------------------------------------------------------------
-
--- System Details --
-Details:
-	Minecraft Version: 1.7.10
-	Operating System: Windows 7 (amd64) version 6.1
-	Java Version: 1.7.0_79, Oracle Corporation
-	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 113055592 bytes (107 MB) / 203423744 bytes (194 MB) up to 1875378176 bytes (1788 MB)
-	JVM Flags: 0 total; 
-	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
-	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
-	FML: 
-	GL info: ' Vendor: 'Intel' Version: '3.1.0 - Build 8.15.10.2418' Renderer: 'Intel(R) HD Graphics Family'
-[09:34:47] [Client thread/INFO] [MinecraftForge]: Attempting early MinecraftForge initialization
-[09:34:47] [Client thread/INFO] [FML]: MinecraftForge v10.13.4.1448 Initialized
-[09:34:47] [Client thread/INFO] [FML]: Replaced 183 ore recipies
-[09:34:47] [Client thread/INFO] [MinecraftForge]: Completed early MinecraftForge initialization
-[09:34:47] [Client thread/INFO] [FML]: Config directory created successfully
-[09:34:47] [Client thread/INFO] [FML]: Found 0 mods from the command line. Injecting into mod discoverer
-[09:34:47] [Client thread/INFO] [FML]: Searching C:\Users\Linus\git\MicrobiologyMod\eclipse\mods for mods
-[09:34:51] [Client thread/INFO] [FML]: Forge Mod Loader has identified 4 mods to load
-[09:34:51] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, microbiologymod] at CLIENT
-[09:34:51] [Client thread/INFO] [FML]: Attempting connection with missing mods [mcp, FML, Forge, microbiologymod] at SERVER
-[09:34:52] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microbiology Mod
-[09:34:52] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
-[09:34:52] [Client thread/INFO] [FML]: Found 341 ObjectHolder annotations
-[09:34:52] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
-[09:34:52] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
-[09:34:52] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
-[09:34:52] [Client thread/INFO] [FML]: Applying holder lookups
-[09:34:52] [Client thread/INFO] [FML]: Holder lookups applied
-[09:34:52] [Client thread/INFO] [FML]: Injecting itemstacks
-[09:34:52] [Client thread/INFO] [FML]: Itemstack injection complete
-[09:34:52] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:34:52] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
-[09:34:52] [Thread-7/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
-[09:34:52] [Thread-7/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[09:34:53] [Thread-7/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
-[09:34:53] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:34:53] [Sound Library Loader/INFO]: Sound engine started
-[09:35:01] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[09:35:01] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[09:35:01] [Client thread/INFO] [FML]: Injecting itemstacks
-[09:35:01] [Client thread/INFO] [FML]: Itemstack injection complete
-[09:35:01] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 4 mods
-[09:35:01] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Microbiology Mod
-[09:35:01] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[09:35:02] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[09:35:02] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:35:02] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
-[09:35:02] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
-[09:35:02] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:35:02] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:35:02] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Starting up SoundSystem...
-[09:35:02] [Thread-9/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: Initializing LWJGL OpenAL
-[09:35:02] [Thread-9/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]:     (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[09:35:02] [Thread-9/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: OpenAL initialized.
-[09:35:02] [Sound Library Loader/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:35:02] [Sound Library Loader/INFO]: Sound engine started
-[09:36:14] [Client thread/INFO]: Stopping!
-[09:36:14] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
-[09:36:14] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: SoundSystem shutting down...
-[09:36:15] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:importantMessage:90]:     Author: Paul Lamb, www.paulscode.com
-[09:36:15] [Client thread/INFO] [STDOUT]: [paulscode.sound.SoundSystemLogger:message:69]: 
+10 warnings
 
 BUILD SUCCESSFUL
 
-Total time: 1 mins 54.397 secs
+Total time: 43.401 secs
