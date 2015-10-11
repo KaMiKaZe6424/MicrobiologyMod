@@ -27,11 +27,6 @@ public class Microbiology {
 	
 	static CreativeTabs tabCore = new MicrobiologyTab();
 
-	Block microanalyzer;
-	
-	Item sample;
-	Item sampleApplied;
-
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent e) {
 		
