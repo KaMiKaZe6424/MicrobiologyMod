@@ -17,6 +17,7 @@ public class BlockMicroAnalyzer extends Block {
 	
 	@Override
 	public void onBlockClicked(World w, int x, int y, int z, EntityPlayer p) {
+		
 	}
 	
 	
