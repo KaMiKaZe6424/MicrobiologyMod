@@ -1,8 +1,7 @@
 package mod.microbiology.items;
 
-import mod.microbiology.ModItems;
 import mod.microbiology.Microbiology;
-import net.minecraft.client.Minecraft;
+import mod.microbiology.registry.ModItems;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

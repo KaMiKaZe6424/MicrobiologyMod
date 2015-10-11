@@ -1,6 +1,8 @@
 package mod.microbiology;
 
 import mod.microbiology.everythingelse.MicrobiologyTab;
+import mod.microbiology.registry.ModBlocks;
+import mod.microbiology.registry.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
