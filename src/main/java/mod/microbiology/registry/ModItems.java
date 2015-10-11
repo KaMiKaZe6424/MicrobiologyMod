@@ -1,4 +1,4 @@
-package mod.microbiology;
+package mod.microbiology.registry;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import mod.microbiology.items.ItemSample;
