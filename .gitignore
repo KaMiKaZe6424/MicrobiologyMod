@@ -1,23 +1,22 @@
-<<<<<<< HEAD
 /bin/
-=======
+/forge-1.7.10-10.13.4.1448-1.7.10-changelog.txt
+/gradlew
 /eclipse/
-/.classpath
->>>>>>> origin/master
+/build/
 /gradle/
 /build.gradle
 /CREDITS-fml.txt
-/forge-1.7.10-10.13.4.1448-1.7.10-changelog.txt
-/gradlew
 /gradlew.bat
 /LICENSE-fml.txt
 /MinecraftForge-Credits.txt
 /MinecraftForge-License.txt
+/README.txt
+/.classpath
+/.gradle
+/.classpath
 /logs/
 /crash-reports/
 /saves/
 /config/
 /options.txt
 /usernamecache.json
-/README.txt
-/build/
