@@ -15,14 +15,14 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class Microbiology {
 
 	public Configuration cfg;
-	public InitRegisterItems initRegItems;
-	public InitRegisterBlocks initRegBlocks;
+	public ModItems initRegItems;
+	public ModBlocks initRegBlocks;
 
 	@EventHandler
 	public void construct(FMLConstructionEvent e) {
 		cfg = new Configuration();
-		initRegItems = new InitRegisterItems();
-		initRegBlocks = new InitRegisterBlocks();
+		initRegItems = new ModItems();
+		initRegBlocks = new ModBlocks();
 	}
 	
 	static CreativeTabs tabCore = new MicrobiologyTab();

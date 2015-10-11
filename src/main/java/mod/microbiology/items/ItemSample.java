@@ -1,6 +1,8 @@
 package mod.microbiology.items;
 
+import mod.microbiology.ModItems;
 import mod.microbiology.Microbiology;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,10 +20,10 @@ public class ItemSample extends Item {
 	@Override
 	public ItemStack onItemRightClick(ItemStack s, World w, EntityPlayer p) {
 		if (p.inventory.getFirstEmptyStack() > 0) {
-		p.inventory.addItemStackToInventory(new ItemStack(new ItemSampleApplied(), 1));
+		p.inventory.addItemStackToInventory(new ItemStack(ModItems.sampleApplied, 1));
 		} else {
 			if (s.stackSize == 1) {
-				return new ItemStack(new ItemSampleApplied(), 1);
+				return new ItemStack(ModItems.sampleApplied, 1);
 			} else {
 				return new ItemStack(s.getItem(), s.stackSize);
 			}
