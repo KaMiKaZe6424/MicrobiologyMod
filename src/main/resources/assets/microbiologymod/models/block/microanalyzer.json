@@ -1,0 +1,10 @@
+"parent" : "blocks/cube",
+textures : {
+	"particle" : "microbiology:blocks/microanalyzer_side",
+	"up" : "microbiology:blocks/microanalyzer_up",
+	"down" : "microbiology:blocks/microanalyzer_down",
+	"north" : "microbiology:blocks/microanalyzer_side",
+	"south" : "microbiology:blocks/microanalyzer_side",
+	"east" : "microbiology:blocks/microanalyzer_side",
+	"west" : "microbiology:blocks/microanalyzer_side"
+}
