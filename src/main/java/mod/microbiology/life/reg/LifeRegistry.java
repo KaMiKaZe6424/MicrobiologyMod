@@ -18,7 +18,7 @@ public class LifeRegistry {
 		rngs = new HashMap<Integer, Random>();
 	}
 	
-	public String generateForm(int moduleid, double prob, String name) {
+	public String generateForm(int moduleid, String name) {
 		String pat = "";
 		{
 			Random rng;
@@ -29,11 +29,53 @@ public class LifeRegistry {
 				rng.setSeed(moduleid);
 				rngs.put(moduleid, rng);
 			}
-			//Yet to be finished
+			while (true) {
+				for (int i = 0; i < 9; i++) {
+					switch (rng.nextInt(4)) {
+					case 0: pat += "A"; break;
+					case 1: pat += "B"; break;
+					case 2: pat += "C"; break;
+					case 3: pat += "D"; break;
+					}
+				}
+				if (!forms.containsKey(pat)) {
+					break;
+				}
+				pat = "";
+			}
 		}
 		forms.put(pat, name);
-		reg.put(name, new HashMap<String, IProperty>());
 		return pat;
+	}
+	
+	public String generatePattern(int moduleid,String lifetype, String name, Probability p) {
+		String pat = "";
+		{
+			Random rng = rngs.get(moduleid);
+			while (true) {
+				for (int i = 0; i < p.getInt(); i++) {
+					switch (rng.nextInt(4)) {
+					case 0: pat += "A"; break;
+					case 1: pat += "B"; break;
+					case 2: pat += "C"; break;
+					case 3: pat += "D"; break;
+					}
+				}
+				if (!reg.get(lifetype).containsKey(pat)) {
+					break;
+				}
+				pat = "";
+			}
+		}
+		return pat;
+	}
+	
+	public IProperty getProperty(String form, String pat) {
+		return reg.get(form).get(pat);
+	}
+	
+	public String getForm(String pat) {
+		return forms.get(pat);
 	}
 	
 }
