@@ -10,6 +10,7 @@ import java.util.List;
  * @author KaMiKaZe6424
  *
  */
+@SuppressWarnings("unused")
 public class NondeterministicTable {
 	
 	HashMap<NondeterministicState, NondeterministicState[]> map;

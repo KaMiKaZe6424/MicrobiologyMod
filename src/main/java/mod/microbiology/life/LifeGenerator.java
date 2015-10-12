@@ -8,7 +8,8 @@ import mod.microbiology.life.dna.IDNA;
 import mod.microbiology.life.reg.LifeRegistry;
 
 public class LifeGenerator {
-	
+
+	@SuppressWarnings("unused")
 	public Collection<Life> genLife(int times) {
 		Collection<Life> c = new ArrayList<Life>();
 		{
@@ -20,6 +21,11 @@ public class LifeGenerator {
 					String type = LifeRegistry.getFormOfDNA(dnas[i].getCode());
 					String[] pats = LifeRegistry.findProperties(type, dnas[i].getCode());
 					Life l = new Life(LifeRegistry.getLifeType(type));
+					Collection<IProperty> coll = new ArrayList<IProperty>();
+					for (String pat : pats) {
+						coll.add(LifeRegistry.getProperty(type, pat));
+					}
+					l.addProperties(coll);
 					
 				}
 			}

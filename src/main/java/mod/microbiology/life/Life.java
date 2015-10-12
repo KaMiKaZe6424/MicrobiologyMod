@@ -11,9 +11,26 @@ public class Life {
 	public Life(ILifeType lifeType) {
 		this.type = lifeType;
 	}
+	
+	public ILifeType getType() {
+		return type;
+	}
 
-	public void setProperties(Collection<IProperty> c) {
-		
+	public void addProperties(Collection<IProperty> p) {
+		for (IProperty pr : p) {
+			boolean poss = true;
+			if (!p.containsAll(pr.getRequired())) {
+				poss = false;
+			}
+			for (IProperty conf : pr.getConflicts()) {
+				if (p.contains(conf)) {
+					poss = false;
+				}
+			}
+			if (poss) {
+				props.add(pr);
+			}
+		}
 	}
 	
 }

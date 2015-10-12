@@ -9,6 +9,7 @@ import java.util.HashMap;
  * @author KaMiKaZe6424
  *
  */
+@SuppressWarnings("unused")
 public class DeterministicState {
 	
 	private String label = "";

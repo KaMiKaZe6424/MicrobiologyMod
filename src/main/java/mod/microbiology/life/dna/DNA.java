@@ -14,6 +14,7 @@ public class DNA implements IDNA {
 	/**
 	 * The constructor without any arguments will create a new DNA object with randomly generated code inside.
 	 */
+	@SuppressWarnings("unused")
 	public DNA() {
 		code = new char[45000];
 		String s = "";
