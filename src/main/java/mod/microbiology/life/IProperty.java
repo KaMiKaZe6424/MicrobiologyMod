@@ -1,11 +1,15 @@
 package mod.microbiology.life;
 
-import net.minecraft.entity.Entity;
+import java.util.Collection;
 
 public interface IProperty {
 	
 	public String getName();
 	
-	public void applyTo(Entity e);
+	public Collection<IEffect> getEffects();
+	
+	public Collection<IProperty> getRequired();
+	
+	public Collection<IProperty> getConflicts();
 	
 }

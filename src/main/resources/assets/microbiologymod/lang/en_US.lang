@@ -2,5 +2,6 @@ tile.microanalyzer.name=Microorganism Analyzer
 
 item.itemSample.name=Sample
 item.itemSampleApplied.name=Applied Sample
+item.itemCottonBud.name=Cotton Bud
 
 itemGroup.mbCore=Microbiology Core

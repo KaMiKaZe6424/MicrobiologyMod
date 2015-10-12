@@ -6,6 +6,7 @@ import java.util.Random;
 import mod.microbiology.automata.DeterministicStateMachine;
 import mod.microbiology.automata.NondeterministicTable;
 import mod.microbiology.automata.TransitionTable;
+import mod.microbiology.life.ILifeType;
 import mod.microbiology.life.IProperty;
 
 public class LifeRegistry {
@@ -18,16 +19,19 @@ public class LifeRegistry {
 	private static HashMap<String, DeterministicStateMachine> machines;
 	
 	private static HashMap<Integer, Random> rngs;
+	private static HashMap<String, ILifeType> lifetypes;
 	
-	public LifeRegistry() {
+	public static void setupRegistry() {
 		reg = new HashMap<String, HashMap<String, IProperty>>();
 		forms = new HashMap<String, String>();
 		rngs = new HashMap<Integer, Random>();
 		machines = new HashMap<String, DeterministicStateMachine>();
+		lifetypes = new HashMap<String, ILifeType>();
 	}
 	
-	public String generateForm(int moduleid, String name) {
+	public static String generateForm(int moduleid, String name, ILifeType t) {
 		String pat = "";
+		lifetypes.put(name, t);
 		{
 			Random rng;
 			if (rngs.containsKey(moduleid)) {
@@ -56,7 +60,7 @@ public class LifeRegistry {
 		return pat;
 	}
 	
-	public String generatePattern(int moduleid,String lifetype, String name, Probability p) {
+	public static String generatePattern(int moduleid,String lifetype, String name, Probability p) {
 		String pat = "";
 		{
 			Random rng = rngs.get(moduleid);
@@ -78,15 +82,15 @@ public class LifeRegistry {
 		return pat;
 	}
 	
-	public IProperty getProperty(String form, String pat) {
+	public static IProperty getProperty(String form, String pat) {
 		return reg.get(form).get(pat);
 	}
 	
-	public String getForm(String pat) {
+	public static String getForm(String pat) {
 		return forms.get(pat);
 	}
 	
-	public void setupAutomata() {
+	public static void setupAutomata() {
 		TransitionTable tt_1 = new TransitionTable();
 		new NondeterministicTable(forms.values().toArray(new String[]{}), tt_1);
 		dsm_forms = new DeterministicStateMachine(tt_1);
@@ -98,12 +102,16 @@ public class LifeRegistry {
 		}
 	}
 	
-	public String getFormOfDNA(char[] dna) {
+	public static String getFormOfDNA(char[] dna) {
 		return dsm_forms.match(dna)[0];
 	}
 	
-	public String[] findProperties(String form, char[] dna) {
+	public static String[] findProperties(String form, char[] dna) {
 		return machines.get(form).match(dna);
+	}
+
+	public static ILifeType getLifeType(String type) {
+		return lifetypes.get(type);
 	}
 	
 }
