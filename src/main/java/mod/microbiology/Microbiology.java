@@ -1,6 +1,7 @@
 package mod.microbiology;
 
 import mod.microbiology.everythingelse.MicrobiologyTab;
+import mod.microbiology.registry.CraftingRecipes;
 import mod.microbiology.registry.ModBlocks;
 import mod.microbiology.registry.ModItems;
 import net.minecraft.block.Block;
@@ -19,12 +20,14 @@ public class Microbiology {
 	public Configuration cfg;
 	public ModItems initRegItems;
 	public ModBlocks initRegBlocks;
+	public CraftingRecipes recipes;
 
 	@EventHandler
 	public void construct(FMLConstructionEvent e) {
 		cfg = new Configuration();
 		initRegItems = new ModItems();
 		initRegBlocks = new ModBlocks();
+		recipes = new CraftingRecipes();
 	}
 	
 	static CreativeTabs tabCore = new MicrobiologyTab();
@@ -47,7 +50,10 @@ public class Microbiology {
 		
 		// Registering Items
 		initRegItems.registerItems();
-
+		
+		// Registering recipes 
+		recipes.initRecipes();
+		
 		// Doing some localization
 
 	}
