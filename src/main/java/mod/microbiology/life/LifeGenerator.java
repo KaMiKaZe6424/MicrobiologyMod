@@ -20,6 +20,7 @@ public class LifeGenerator {
 					String type = LifeRegistry.getFormOfDNA(dnas[i].getCode());
 					String[] pats = LifeRegistry.findProperties(type, dnas[i].getCode());
 					Life l = new Life(LifeRegistry.getLifeType(type));
+					
 				}
 			}
 		}
