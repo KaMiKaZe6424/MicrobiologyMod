@@ -10,6 +10,7 @@ public class ItemPetriDish extends Item {
 		setMaxStackSize(16);
 		setCreativeTab(Microbiology.tabCore());
 		setUnlocalizedName("itemPetriDish");
+		setTextureName("generic:petrydish_empty");
 	}
 
 }
