@@ -12,7 +12,9 @@ public class CraftingRecipes {
 	}
 	
 	public void initRecipes() {
-		GameRegistry.addRecipe(new ItemStack(ModItems.cottonBud), new Object[] {" # ", " I ", " # ", '#', Blocks.wool, 'I', Items.stick});
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.cottonBud), new Object[] {" # ", " I ", " # ", '#', Blocks.wool, 'I', Items.stick});
+		GameRegistry.addShapedRecipe(new ItemStack(ModItems.petriDish), new Object[] {"   ", "# #","###",'#',Blocks.glass});
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.sample), new ItemStack(ModItems.cottonBud), new ItemStack(ModItems.petriDish));
 	}
 
 }
