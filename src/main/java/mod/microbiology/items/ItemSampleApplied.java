@@ -4,6 +4,7 @@ import java.util.List;
 
 import mod.microbiology.Microbiology;
 import mod.microbiology.registry.ModItems;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -40,6 +41,11 @@ public class ItemSampleApplied extends Item implements IItemSampleApplied {
 		
 		return s;
 		
+	}
+	
+	@Override
+	public void registerIcons(IIconRegister reg) {
+		this.itemIcon = reg.registerIcon("microbiologymod:petrydish_full");
 	}
 	
 }

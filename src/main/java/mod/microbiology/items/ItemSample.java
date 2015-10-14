@@ -2,6 +2,7 @@ package mod.microbiology.items;
 
 import mod.microbiology.Microbiology;
 import mod.microbiology.registry.ModItems;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -28,5 +29,10 @@ public class ItemSample extends Item {
 			}
 		}
 		return new ItemStack(s.getItem(), s.stackSize-1);
+	}
+	
+	@Override
+	public void registerIcons(IIconRegister reg) {
+		this.itemIcon = reg.registerIcon("microbiologymod:petrydish_empty");
 	}
 }
