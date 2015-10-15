@@ -25,7 +25,6 @@ public class BlockMicroAnalyzer extends Block {
 	
 	@Override
 	public void registerBlockIcons(IIconRegister reg) {
-		this.blockIcon = reg.registerIcon("microbiologymod:microanalyzer_side");
 		icons[0] = reg.registerIcon("microbiologymod:microanalyzer_down");
 		icons[1] = reg.registerIcon("microbiologymod:microanalyzer_up");
 		icons[2] = reg.registerIcon("microbiologymod:microanalyzer_side");
@@ -34,6 +33,9 @@ public class BlockMicroAnalyzer extends Block {
 		icons[5] = reg.registerIcon("microbiologymod:microanalyzer_side");
 	}
 	
-	
+	@Override
+	public IIcon getIcon(int side, int meta) {
+	    return this.icons[side];
+	}
 	
 }
