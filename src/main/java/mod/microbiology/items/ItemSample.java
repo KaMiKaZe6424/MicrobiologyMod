@@ -23,7 +23,7 @@ public class ItemSample extends Item {
 		p.inventory.addItemStackToInventory(new ItemStack(ModItems.sampleApplied, 1));
 		} else {
 			if (s.stackSize == 1) {
-				return new ItemStack(ModItems.sampleApplied, 1);
+				return new ItemStack(new ItemSampleApplied(), 1);
 			} else {
 				return new ItemStack(s.getItem(), s.stackSize);
 			}

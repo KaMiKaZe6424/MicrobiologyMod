@@ -1,8 +1,11 @@
 package mod.microbiology.items;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-import mod.microbiology.Microbiology;
+import mod.microbiology.life.dna.DNA;
+import mod.microbiology.life.dna.IDNA;
 import mod.microbiology.registry.ModItems;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,19 +15,28 @@ import net.minecraft.world.World;
 
 public class ItemSampleApplied extends Item implements IItemSampleApplied {
 	
+	private List<IDNA> dnas;
 	
+	private Thread t;
 	
 	public ItemSampleApplied() {
 		super();
 		setMaxStackSize(1);
-		setCreativeTab(Microbiology.tabCore());
 		setUnlocalizedName("itemSampleApplied");
+		dnas = new ArrayList<IDNA>();
+		t = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				generateDNA();
+				t.interrupt();
+			}
+			
+		});
 	}
 
 	@Override
-	public List<char[]> getDNACodes() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<IDNA> getDNA() {
+		return dnas;
 	}
 	
 	@Override
@@ -46,6 +58,19 @@ public class ItemSampleApplied extends Item implements IItemSampleApplied {
 	@Override
 	public void registerIcons(IIconRegister reg) {
 		this.itemIcon = reg.registerIcon("microbiologymod:petrydish_full");
+	}
+	
+	private void generateDNA() {
+		dnas.clear();
+		Random r = new Random();
+		int i = 10 + r.nextInt(5);
+		for (int j = 0; j <= i; j++) {
+			dnas.add(new DNA());
+		}
+	}
+	
+	public boolean isFinished() {
+		return t.isInterrupted();
 	}
 	
 }
