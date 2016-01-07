@@ -27,6 +27,8 @@ public class Microbiology {
 	public ModBlocks initRegBlocks;
 	public ModCommands initRegCmds;
 	public CraftingRecipes recipes;
+	
+	static CreativeTabs tabCore = new MicrobiologyTab();
 
 	@EventHandler
 	public void construct(FMLConstructionEvent e) {
@@ -36,8 +38,6 @@ public class Microbiology {
 		initRegCmds = new ModCommands();
 		recipes = new CraftingRecipes();
 	}
-	
-	static CreativeTabs tabCore = new MicrobiologyTab();
 
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent e) {
@@ -71,6 +71,7 @@ public class Microbiology {
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent e) {
 		
+		// Registering the commands
 		initRegCmds.registerCmds(e);
 		
 	}

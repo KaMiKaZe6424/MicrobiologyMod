@@ -16,6 +16,10 @@ public class ModCommands {
 		discord = new DiscordCmd();
 	}
 	
+	/**
+	 * Registers the commands
+	 * @param e The FMLServerStartingEvent
+	 */
 	public void registerCmds(FMLServerStartingEvent e) {
 		e.registerServerCommand(discord);
 	}
