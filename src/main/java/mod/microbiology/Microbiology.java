@@ -3,7 +3,9 @@ package mod.microbiology;
 import mod.microbiology.everythingelse.MicrobiologyTab;
 import mod.microbiology.registry.CraftingRecipes;
 import mod.microbiology.registry.ModBlocks;
+import mod.microbiology.registry.ModCommands;
 import mod.microbiology.registry.ModItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.Mod;
@@ -11,13 +13,19 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import me.itsghost.jdiscord.DiscordAPI;
+import me.itsghost.jdiscord.DiscordBuilder;
 
 @Mod(modid = "microbiologymod", name = "Microbiology Mod", version = "0.0")
 public class Microbiology {
+	
+	DiscordAPI api;
 
 	public Configuration cfg;
 	public ModItems initRegItems;
 	public ModBlocks initRegBlocks;
+	public ModCommands initRegCmds;
 	public CraftingRecipes recipes;
 
 	@EventHandler
@@ -25,6 +33,7 @@ public class Microbiology {
 		cfg = new Configuration();
 		initRegItems = new ModItems();
 		initRegBlocks = new ModBlocks();
+		initRegCmds = new ModCommands();
 		recipes = new CraftingRecipes();
 	}
 	
@@ -38,6 +47,9 @@ public class Microbiology {
 
 		// Initializing Items here
 		initRegItems.initItems();
+		
+		// Initializing Commands here
+		initRegCmds.initCmds();
 		
 	}
 
@@ -54,6 +66,13 @@ public class Microbiology {
 		
 		// Doing some localization
 
+	}
+	
+	@EventHandler
+	public void serverLoad(FMLServerStartingEvent e) {
+		
+		initRegCmds.registerCmds(e);
+		
 	}
 	
 	public static CreativeTabs tabCore() {
