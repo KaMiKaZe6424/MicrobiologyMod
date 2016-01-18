@@ -1,8 +1,13 @@
 package mod.microbiology.items;
 
 import mod.microbiology.Microbiology;
+import mod.microbiology.gui.GUIMicroanalyzer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class ItemCottonBud extends Item {
 	
@@ -18,4 +23,13 @@ public class ItemCottonBud extends Item {
 		this.itemIcon = reg.registerIcon("microbiologymod:cotton_swab");
 	}
 
+	@Override
+	public ItemStack onItemRightClick(ItemStack s, World w, EntityPlayer p) {
+		if (!w.isRemote) {
+			Minecraft.getMinecraft().displayGuiScreen(new GUIMicroanalyzer());
+		}
+		return s;
+		
+	}
+	
 }
