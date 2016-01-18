@@ -14,13 +14,13 @@ import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import me.itsghost.jdiscord.DiscordAPI;
-import me.itsghost.jdiscord.DiscordBuilder;
+//import me.itsghost.jdiscord.DiscordAPI;
+//import me.itsghost.jdiscord.DiscordBuilder;
 
 @Mod(modid = "microbiologymod", name = "Microbiology Mod", version = "0.0")
 public class Microbiology {
 	
-	DiscordAPI api;
+	//DiscordAPI api;
 
 	public Configuration cfg;
 	public ModItems initRegItems;

@@ -42,7 +42,7 @@ public class DiscordCmd implements ICommand {
 		if (sender instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) sender;
 			String firstArg = args[0];
-			discord.login(player, args);
+			//discord.login(player, args);
 			player.addChatMessage(new ChatComponentTranslation(firstArg));
 		}
 	}

@@ -1,17 +1,17 @@
 package mod.microbiology.discord;
 
-import me.itsghost.jdiscord.DiscordAPI;
+/**import me.itsghost.jdiscord.DiscordAPI;
 import me.itsghost.jdiscord.DiscordBuilder;
 import me.itsghost.jdiscord.event.EventManager;
 import me.itsghost.jdiscord.exception.BadUsernamePasswordException;
 import me.itsghost.jdiscord.exception.DiscordFailedToConnectException;
 import me.itsghost.jdiscord.exception.NoLoginDetailsException;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.ChatComponentTranslation;**/
 
 public class Discord {
 	
-	private DiscordAPI api;
+	/**private DiscordAPI api;
 
 	public void login(EntityPlayer player, String[] args) {
 		player.addChatMessage(new ChatComponentTranslation(Integer.toString(args.length)));
@@ -40,6 +40,6 @@ public class Discord {
 	public void waitForUserData() {
 		EventManager manager = api.getEventManager();
 		manager.registerListener(null);
-	}
+	}*/
 	
 }

@@ -1,8 +1,10 @@
 package mod.microbiology.blocks;
 
 import mod.microbiology.Microbiology;
+import mod.microbiology.gui.GUIMicroanalyzer;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.IIcon;
@@ -20,7 +22,7 @@ public class BlockMicroAnalyzer extends Block {
 	
 	@Override
 	public void onBlockClicked(World w, int x, int y, int z, EntityPlayer p) {
-		
+		Minecraft.getMinecraft().displayGuiScreen(new GUIMicroanalyzer());
 	}
 	
 	@Override
