@@ -9,6 +9,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLConstructionEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -20,60 +22,34 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 @Mod(modid = "microbiologymod", name = "Microbiology Mod", version = "0.0")
 public class Microbiology {
 	
+	@Instance
+	public static Microbiology instance = new Microbiology();
+	
 	//DiscordAPI api;
-
-	public Configuration cfg;
-	public ModItems initRegItems;
-	public ModBlocks initRegBlocks;
-	public ModCommands initRegCmds;
-	public CraftingRecipes recipes;
+	
+	@SidedProxy(clientSide="mod.microbiology.ClientProxy", serverSide="mod.microbiology.CommonProxy")
+	public static CommonProxy proxy;
 	
 	static CreativeTabs tabCore = new MicrobiologyTab();
 
 	@EventHandler
 	public void construct(FMLConstructionEvent e) {
-		cfg = new Configuration();
-		initRegItems = new ModItems();
-		initRegBlocks = new ModBlocks();
-		initRegCmds = new ModCommands();
-		recipes = new CraftingRecipes();
+		proxy.contruct(e);
 	}
 
 	@EventHandler
 	public void preinit(FMLPreInitializationEvent e) {
-		
-		// Initializing Blocks here
-		initRegBlocks.initBlocks();
-
-		// Initializing Items here
-		initRegItems.initItems();
-		
-		// Initializing Commands here
-		initRegCmds.initCmds();
-		
+		proxy.preInit(e);
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
-		// Registering Blocks
-		initRegBlocks.registerBlocks();
-		
-		// Registering Items
-		initRegItems.registerItems();
-		
-		// Registering recipes 
-		recipes.initRecipes();
-		
-		// Doing some localization
-
+		proxy.init(e);
 	}
 	
 	@EventHandler
 	public void serverLoad(FMLServerStartingEvent e) {
-		
-		// Registering the commands
-		initRegCmds.registerCmds(e);
-		
+		proxy.serverLoad(e);
 	}
 	
 	public static CreativeTabs tabCore() {

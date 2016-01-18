@@ -22,14 +22,5 @@ public class ItemCottonBud extends Item {
 	public void registerIcons(IIconRegister reg) {
 		this.itemIcon = reg.registerIcon("microbiologymod:cotton_swab");
 	}
-
-	@Override
-	public ItemStack onItemRightClick(ItemStack s, World w, EntityPlayer p) {
-		if (!w.isRemote) {
-			Minecraft.getMinecraft().displayGuiScreen(new GUIMicroanalyzer());
-		}
-		return s;
-		
-	}
 	
 }

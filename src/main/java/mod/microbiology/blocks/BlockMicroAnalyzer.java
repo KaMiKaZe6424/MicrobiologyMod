@@ -22,7 +22,15 @@ public class BlockMicroAnalyzer extends Block {
 	
 	@Override
 	public void onBlockClicked(World w, int x, int y, int z, EntityPlayer p) {
-		Minecraft.getMinecraft().displayGuiScreen(new GUIMicroanalyzer());
+		
+	}
+	
+	@Override
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_) {
+		if (world.isRemote) {
+			player.openGui(Microbiology.instance, GUIMicroanalyzer.ID, world, (int) player.posX, (int) player.posY, (int) player.posZ);
+		}
+		return blockConstructorCalled;
 	}
 	
 	@Override
